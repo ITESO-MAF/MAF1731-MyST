@@ -14,7 +14,7 @@ suppressMessages(library(plotly)) # Graficas interactivas
 suppressMessages(library(Quandl)) # Descargar Precios
 suppressMessages(library(ROI))    # Optimizacion para portafolio
 suppressMessages(library(knitr))  # Opciones de documentaci?n + c?digo
-suppressMessages(library(xlsx))   # Leer archivos XLSx
+suppressMessages(library(openxlsx))   # Leer archivos XLSx
 suppressMessages(library(kableExtra)) # Tablas en HTML
 suppressMessages(library(PortfolioAnalytics)) # Teor?a Moderna de Portafolios
 
@@ -34,20 +34,16 @@ Bajar_Precios <- function(Columns, Tickers, Fecha_In, Fecha_Fn) {
   # -- Fecha_Fn : Fecha Final : character : "2017-08-02"
   
   # Peticion para descargar precios
-  Datos <- Quandl.datatable(code = "WIKI/PRICES", qopts.columns=Columns,
+  Datos <- Quandl.datatable("WIKI/PRICES", qopts.columns=Columns,
                             ticker=Tickers,
                             date.gte=Fecha_In, date.lte=Fecha_Fn)
   return(Datos)
 }
 
 # Tickers de acciones contenidas en ETF-IAK
-tk <- as.data.frame(read.xlsx(file = "IAK.xlsx",
-                              sheetName = "Holdings",
-                              colIndex=1,
-                              startRow=10,
-                              endRow=73,header = FALSE))
 
-tk <- c(as.character(tk[,1]))
+Datos_ETF <- read.xlsx("IAK_holdings.xlsx", sheet = 1)
+tk  <- as.character(na.omit(Datos_ETF[which(Datos_ETF[,1] == "Ticker")+1:length(Datos_ETF[,1]),1]))
 cs <- c("date", "adj_close")
 
 # Fecha inicial y fecha final
@@ -122,10 +118,10 @@ Historico <- data.frame("Date" = row.names(Precios),
 # *Titulos*    : Acciones que se tienen.
 # *Titulos_a*  : Titulos acumulados.
 # *Operacion*  : Indicativo de Compra (1), Mantener (0), Venta (-1).
-# *Comisiones* : 0.0025 ? 0.25% por el valor de la transacci?n.
-# *Mensaje*    : Un texto que indique alguna decisi?n o indicativo de que ocurri? algo.
+# *Comisiones* : 0.0025 o 0.25% por el valor de la transaccion.
+# *Mensaje*    : Un texto que indique alguna decision o indicativo de que ocurrio algo.
 
-Regla0_R <- -0.03  # Considerar una oportunidad de compra en un rendimiento de -6% o menor.
+Regla0_R <- -0.03  # Considerar una oportunidad de compra en un rendimiento de -3% o menor.
 Regla1_I <- 0.20   # Porcentaje de capital para comprar titulos para posicion Inicial.
 Regla2_P <- 0.25   # Se utiliza el P% del L capital restante en cada compra.
 Regla3_W <- tk_completos # Se realiza la misma estrategia para todos los activos en el portafolio.
