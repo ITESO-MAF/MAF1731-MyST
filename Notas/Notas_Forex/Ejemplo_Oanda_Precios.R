@@ -15,7 +15,7 @@ options(tz="America/Monterrey", TZ="America/Monterrey")
 pkg <- c("base","downloader","dplyr","fBasics","forecast","grid",
          "gridExtra","httr","jsonlite","lmtest","lubridate","moments",
          "matrixStats", "PerformanceAnalytics","plyr","quantmod",
-         "reshape2","RCurl","RMySQL", "stats","scales","tseries",
+         "reshape2","RCurl", "stats","scales","tseries",
          "TTR","TSA","XML","xts","zoo")
 
 inst <- pkg %in% installed.packages()
@@ -43,11 +43,47 @@ OA_Ta <- "America/Mexico_City"
 # Instrumento
 OA_In <- "EUR_USD"
 # Granularidad o periodicidad de los precios H4 = Cada 4 horas
-OA_Pr <- "H4"
+# S5, S10, S30, M1, M5, M15, M30, H1, H4, H8, D, M
+OA_Pr <- "M1"
 # Multiplicador de precios para convertir a PIPS
 MultPip_MT1 <- 10000
 
-Precios_Oanda <- HisPrices(AccountType = OA_At, Granularity = OA_Pr,
-                           DayAlign = OA_Da, TimeAlign = OA_Ta, Token = OA_Ak,
-                           Instrument = OA_In, 
-                           Start = NULL, End = NULL, Count = 900)
+# Esta se obtiene de cada observacion en el archivo xls que descargas. Este fue
+# un ejemplo de una fecha que podrias leer de tal archivo una vez que lo descargas
+Fecha_Ejemplo <- "10/01/2018 14:00:00"
+
+# Opcion 1 para convertir a "YYYY-MM-DD"
+F1 <- as.Date(strptime(x = Fecha_Ejemplo, format = "%m/%d/%Y %H:%M:%S",tz = "GMT"))
+
+# Opcion 2 para convertir a "YYYY-MM-DD"
+F2 <- as.Date(substr(Fecha_Ejemplo,1 ,10),format = "%m/%d/%Y")
+
+# Ejemplo Si el comunicado fue en domingo, que pida precios desde viernes a domingo
+F3 <- as.Date("2018-09-30")
+
+# Condicion por si acaso toca en domingo el comunicado, no se podria restar un dia y 
+# que terminara siendo sabado, porque ese dia no hay precios.
+if(wday(F3) != 1){
+
+  Precios_Oanda <- HisPrices(AccountType = OA_At, Granularity = OA_Pr,
+                             DayAlign = OA_Da, TimeAlign = OA_Ta, Token = OA_Ak,
+                             Instrument = OA_In, 
+                             Start = F1-1, End = F1, Count = NULL)
+} else {
+  Precios_Oanda <- HisPrices(AccountType = OA_At, Granularity = OA_Pr,
+                             DayAlign = OA_Da, TimeAlign = OA_Ta, Token = OA_Ak,
+                             Instrument = OA_In, 
+                             Start = F3-2, End = F1, Count = NULL)
+}
+
+# Para convertir las fechas del xlsx con historico de indicadores al mismo formato
+# de fecha que entrega Oanda los precios
+fecha <- as.character(as.POSIXct(Fecha_Ejemplo, format = "%m/%d/%Y %H:%M:%S"))
+
+# Para encontrar el registro donde coincide la fecha y hora del comunicado de 
+# indicador y los historicos de precios descargados
+ind <- which(Precios_Oanda$TimeStamp == fecha)
+
+# Para visualizar un data frame con los 31 precios deseados. 15 antes del comunicad, 1 
+# durante el comunicado y 15 después del comunicado
+df <- Precios_Oanda[(ind-15):(ind+15),]
