@@ -1,0 +1,172 @@
+
+\ProvidesPackage{beamerthememyst} 
+% \RequirePackage{TradingPalcolors}
+\selectcolormodel{cmyk}
+\mode<presentation>
+
+% -- ----------------------------------------------------------------------------------------- -- %
+% -- ----------------------------------------------------------------------------------------- -- %
+
+% butter (yellowish)
+\definecolor{tabutter}{rgb}{0.98824, 0.91373, 0.30980}		% #fce94f
+\definecolor{ta2butter}{rgb}{0.92941, 0.83137, 0}		% #edd400
+\definecolor{ta3butter}{rgb}{0.76863, 0.62745, 0}		% #c4a000
+
+% orange
+\definecolor{taorange}{rgb}{0.98824, 0.68627, 0.24314}		% #fcaf3e
+\definecolor{ta2orange}{rgb}{0.96078, 0.47451, 0}		% #f57900
+\definecolor{ta3orange}{rgb}{0.80784, 0.36078, 0}		% #ce5c00
+
+% chocolate (brownish)
+\definecolor{tachocolate}{rgb}{0.91373, 0.72549, 0.43137}	% #e9b96e
+\definecolor{ta2chocolate}{rgb}{0.75686, 0.49020, 0.066667}	% #c17d11
+\definecolor{ta3chocolate}{rgb}{0.56078, 0.34902, 0.0078431}	% #8f5902
+
+% chameleon (greenish)
+\definecolor{tachameleon}{rgb}{0.54118, 0.88627, 0.20392}	% #8ae234
+\definecolor{ta2chameleon}{rgb}{0.45098, 0.82353, 0.086275}	% #73d216
+\definecolor{ta3chameleon}{rgb}{0.30588, 0.60392, 0.023529}	% #4e9a06
+
+% sky blue
+\definecolor{taskyblue}{rgb}{0.44706, 0.56078, 0.81176}		% #728fcf
+\definecolor{ta2skyblue}{rgb}{0.20392, 0.39608, 0.64314}	% #3465a4
+\definecolor{ta3skyblue}{rgb}{0.12549, 0.29020, 0.52941}	% #204a87
+
+% plum (violettish)
+\definecolor{taplum}{rgb}{0.67843, 0.49804, 0.65882}		% #ad7fa8
+\definecolor{ta2plum}{rgb}{0.45882, 0.31373, 0.48235}		% #75507b
+\definecolor{ta3plum}{rgb}{0.36078, 0.20784, 0.4}		% #5c3566
+
+% scarlet red
+\definecolor{tascarletred}{rgb}{0.93725, 0.16078, 0.16078}	% #ef2929
+\definecolor{ta2scarletred}{rgb}{0.8, 0, 0}			% #cc0000
+\definecolor{ta3scarletred}{rgb}{0.64314, 0, 0}			% #a40000
+
+% aluminium
+\definecolor{taaluminium}{rgb}{0.93333, 0.93333, 0.92549}	% #eeeeec
+\definecolor{ta2aluminium}{rgb}{0.82745, 0.84314, 0.81176}	% #d3d7cf
+\definecolor{ta3aluminium}{rgb}{0.72941, 0.74118, 0.71373}	% #babdb6
+
+% gray
+\definecolor{tagray}{rgb}{0.53333, 0.54118, 0.52157}		% #888a85
+\definecolor{ta2gray}{rgb}{0.33333, 0.34118, 0.32549}		% #555753
+\definecolor{ta3gray}{RGB} {133,59,59}    % IFPGris Main Background
+
+\definecolor{QuantAzul4}  {RGB} {0,16,133}
+\definecolor{QuantAzul3}  {RGB} {0,4,255}
+\definecolor{QuantAzul2}  {RGB} {0,90,174}
+\definecolor{QuantAzul1}  {RGB} {0,176,191}
+
+\definecolor{QuantBlanco} {RGB} {255,255,255}
+\definecolor{QuantOst}    {RGB} {239,239,239}
+\definecolor{QuantGris}   {RGB} {79,84,88}
+\definecolor{QuantNegro}  {RGB} {10,10,0}
+\definecolor{QuantRojo2}  {RGB} {208,0,0}
+\definecolor{QuantRojo1}  {RGB} {178,0,0}
+
+% -- ----------------------------------------------------------------------------------------- -- %
+% -- ----------------------------------------------------------------------------------------- -- %
+
+\setbeamerfont {footline}{size=\large,series=\tt}
+\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamerfont {footline}{size=\large,series=\tt}
+
+\setbeamercolor{headline}{fg=QuantGris,bg=QuantBlanco}
+\setbeamercolor{footline}{fg=QuantGris, bg=QuantGris}
+\setbeamercolor{separation line}{bg=QuantGris}
+
+\setbeamercolor{title in headline}{fg=QuantNegro}
+\setbeamercolor{author in headline}{fg=QuantNegro}
+\setbeamercolor{institute in headline}{fg=QuantNegro}
+
+\setbeamercolor{framesubtitle}{fg=QuantGris, bg=QuantBlanco}
+\setbeamercolor{author in head/foot}{fg=QuantGris, bg=QuantBlanco}
+\setbeamercolor{title in head/foot}{fg=QuantGris, bg=QuantBlanco}
+
+\setbeamercolor*{normal text}{fg=QuantGris, bg=QuantBlanco}
+\setbeamercolor*{block body}{bg=QuantBlanco,fg=QuantGris}
+\setbeamercolor*{block title}{fg=QuantBlanco,bg=QuantAzul4}
+
+\setbeamercolor*{example body}{fg=QuantGris,bg=black}
+\setbeamercolor*{example text}{fg=QuantGris,bg=black}
+\setbeamercolor*{example title}{bg=taorange,fg=QuantGris}
+
+\setbeamercolor{alerted text}{fg=QuantAzul3}
+\setbeamercolor{structure}{fg=ta3skyblue}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}
+
+% -- ----------------------------------------------------------------------------------------- -- %
+% -- ----------------------------------------------------------------------------------------- -- %
+
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1.5cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=false,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+% -- ----------------------------------------------------------------------------------------- -- %
+% -- ----------------------------------------------------------------------------------------- -- %
+
+\setbeamertemplate{headline}{  
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}
+    
+      \begin{column}{.70\paperwidth}
+       
+       \vskip1cm
+       \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}}
+       \vskip1cm
+       \usebeamercolor{title in headline}{\color{fg}\textbf{\large{\insertinstitute}}}
+       \vskip1cm
+       \usebeamercolor{title in headline}{\color{fg}\textbf{\large{\insertauthor}}}
+       \vskip1cm
+       
+      \end{column}
+      
+      \begin{column}{.1\paperwidth}
+        \vskip1cm
+        
+        % \begin{center}
+        %   \includegraphics[scale=.75]{logo.png}
+        % \end{center}
+         \vskip1cm
+
+\end{column}
+\end{columns}
+\end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+  \rule[1mm]{5mm}{.5cm}
+  \end{beamercolorbox}}
+
+% -- ----------------------------------------------------------------------------------------- -- %
+% -- ----------------------------------------------------------------------------------------- -- %
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    \texttt{www.iteso.mx}
+    \hfill
+    \texttt{alumno@iteso.mx}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
