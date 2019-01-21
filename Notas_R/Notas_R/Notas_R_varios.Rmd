@@ -2,7 +2,7 @@
 title: "Notas de repaso: **R**"
 subtitle: "Microestructura y Sistemas de Trading"
 author: "franciscome@iteso.mx"
-date: "January 15, 2018"
+date: "Enero, 2019"
 output: html_document
 ---
 
