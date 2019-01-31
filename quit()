@@ -1,0 +1,199 @@
+[33mcommit 508042f0d20ef297cdd93ae1f40cfe9c075f9f56[m
+Author: Francisco-Azure <if.francisco.me@gmail.com>
+Date:   Thu Jan 24 16:02:28 2019 +0000
+
+    Notas_R_varios modificado
+
+ Notas/Notas_AdminActiva/Notas_AdminActiva.ipynb |  155 [32m+++++++++++++[m
+ Notas_R/Notas_R/Notas_R_varios.ipynb            | 1106 [32m++++++++++++++++++++++++++++++++[m[31m------------------------------------------------------------[m
+ 2 files changed, 539 insertions(+), 722 deletions(-)
+
+[33mcommit 11045b336841386f4e89f59dd98edb8a4aca4cd4[m
+Author: IFFranciscoME <if.francisco.me@gmail.com>
+Date:   Mon Jan 21 10:22:30 2019 -0600
+
+    Notebook de R
+
+ Notas_Python/.idea/workspace.xml                           |  67 [32m+++[m[31m-----[m
+ Notas_Python/Notas_RepasoPython3/DataFrame.ipynb           | 175 [32m++++++++++++++++++++[m
+ Notas_R/Notas_AdminActiva/Notas_AdministracionActiva.ipynb | 325 [32m++[m[31m-----------------------------------[m
+ Notas_R/Notas_R/Notas_R_varios.Rmd                         |   2 [32m+[m[31m-[m
+ Notas_R/Notas_R/Notas_R_varios.ipynb                       | 722 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ 5 files changed, 928 insertions(+), 363 deletions(-)
+
+[33mcommit 67bf97467249cbfb7573c5291236a92acf50d999[m
+Author: IFFranciscoME <if.francisco.me@gmail.com>
+Date:   Sun Jan 20 12:00:46 2019 -0600
+
+    Grafica Velas OHLC
+
+ Notas_Python/.idea/Notas_Python.iml                                             |  11 [32m+++[m
+ Notas_Python/.idea/dictionaries/franciscome.xml                                 |   3 [32m+[m
+ Notas_Python/.idea/encodings.xml                                                |   4 [32m++[m
+ Notas_Python/.idea/inspectionProfiles/Project_Default.xml                       |  10 [32m+++[m
+ Notas_Python/.idea/misc.xml                                                     |   4 [32m++[m
+ Notas_Python/.idea/modules.xml                                                  |   8 [32m+++[m
+ Notas_Python/.idea/vcs.xml                                                      |   6 [32m++[m
+ Notas_Python/.idea/workspace.xml                                                | 234 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ Notas_Python/AdministracionActiva.ipynb                                         | 202 [31m----------------------------------------------------[m
+ Notas_Python/Notas_AdminActiva/AdministracionActiva.ipynb                       | 140 [32m++++++++++++++++++++++++++++++++++++[m
+ Notas_Python/Notas_AnalisisTecnico/.idea/Notas_AnalisisTecnico.iml              |  13 [32m++++[m
+ Notas_Python/Notas_AnalisisTecnico/.idea/dictionaries/franciscome.xml           |   3 [32m+[m
+ Notas_Python/Notas_AnalisisTecnico/.idea/encodings.xml                          |   4 [32m++[m
+ Notas_Python/Notas_AnalisisTecnico/.idea/inspectionProfiles/Project_Default.xml |  10 [32m+++[m
+ Notas_Python/Notas_AnalisisTecnico/.idea/misc.xml                               |   4 [32m++[m
+ Notas_Python/Notas_AnalisisTecnico/.idea/modules.xml                            |   8 [32m+++[m
+ Notas_Python/Notas_AnalisisTecnico/.idea/vcs.xml                                |   6 [32m++[m
+ Notas_Python/Notas_AnalisisTecnico/.idea/workspace.xml                          | 136 [32m+++++++++++++++++++++++++++++++++++[m
+ Notas_Python/Notas_AnalisisTecnico/AnalisisTecnico.py                           |  79 [32m+++++++++++++++++++++[m
+ Notas_Python/Notas_AnalisisTecnico/file.html                                    |   7 [32m++[m
+ Notas_Python/Notas_Herramientas/Plotly.py                                       |  64 [32m+++++++++++++++++[m
+ Notas_Python/Notas_Herramientas/Precios_Oanda.py                                |  50 [32m+++++++++++++[m
+ Notas_Python/Notas_Herramientas/__init__.py                                     |   0
+ Notas_Python/__init__.py                                                        |   0
+ Notas_Python/file.html                                                          |   7 [32m++[m
+ Notas_Python/simple_candlestick.html                                            |   7 [32m++[m
+ Notas_Python/temp-plot.html                                                     |   7 [32m++[m
+ 27 files changed, 825 insertions(+), 202 deletions(-)
+
+[33mcommit 68ab0f4f995330d542a0202d13aea57d4b9d2f9f[m
+Author: IFFranciscoME <if.francisco.me@gmail.com>
+Date:   Fri Jan 18 16:08:48 2019 -0600
+
+    Administracion Activa con Oanda
+
+ Notas_Python/AdministracionActiva.ipynb | 202 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ 1 file changed, 202 insertions(+)
+
+[33mcommit 624af5331f3f1fc17db58e5132106379bd2d7655[m
+Author: IFFranciscoME <if.francisco.me@gmail.com>
+Date:   Sat Dec 29 16:31:44 2018 -0600
+
+    Cambios iniciales para migrar curso a Python
+
+ Notas/Beamer poster - landscape orientation/beamerthemeI6dv.sty                |   161 [31m-[m
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.nav             |     7 [31m-[m
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.pdf             |   Bin [31m41585[m -> [32m0[m bytes
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.snm             |     0
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.synctex.gz      |   Bin [31m6911[m -> [32m0[m bytes
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.tex             |    76 [31m-[m
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.toc             |     1 [31m-[m
+ Notas/Beamer poster - landscape orientation/rwthaachenuniversity-whitegray.pdf |   Bin [31m3244[m -> [32m0[m bytes
+ Notas/Beamer poster - landscape orientation/tangocolors.sty                    |    51 [31m-[m
+ Notas/Ejemplos/Knitr_BackTest.pdf                                              |   Bin [31m363712[m -> [32m0[m bytes
+ Notas/FichaTecnica_Knitr/FichaTecnica-concordance.tex                          |     2 [31m-[m
+ Notas/FichaTecnica_Knitr/FichaTecnica.nav                                      |     7 [31m-[m
+ Notas/FichaTecnica_Knitr/FichaTecnica.pdf                                      |   Bin [31m57005[m -> [32m0[m bytes
+ Notas/FichaTecnica_Knitr/FichaTecnica.rnw                                      |   335 [31m-[m
+ Notas/FichaTecnica_Knitr/FichaTecnica.snm                                      |     0
+ Notas/FichaTecnica_Knitr/FichaTecnica.synctex.gz                               |   Bin [31m13273[m -> [32m0[m bytes
+ Notas/FichaTecnica_Knitr/FichaTecnica.tex                                      |   349 [31m-[m
+ Notas/FichaTecnica_Knitr/FichaTecnica.toc                                      |     1 [31m-[m
+ Notas/FichaTecnica_Knitr/beamerthememyst.sty                                   |   172 [31m-[m
+ Notas/FichaTecnica_Knitr/framed.sty                                            |   548 [31m-[m
+ Notas/FichaTecnica_Knitr/tangocolors.sty                                       |    51 [31m-[m
+ Notas/Notas_AdminActiva/.RData                                                 |   Bin [31m409194[m -> [32m0[m bytes
+ Notas/Notas_AdminActiva/.Rhistory                                              |   512 [31m-[m
+ Notas/Notas_AdminActiva/IAK_holdings.csv                                       |    77 [31m-[m
+ Notas/Notas_AdminActiva/IAK_holdings.xlsx                                      |   Bin [31m11489[m -> [32m0[m bytes
+ Notas/Notas_AdminActiva/Notas_AdminActiva.r                                    |   305 [31m-[m
+ Notas/Notas_AdminActiva/Notas_AdministracionActiva.ipynb                       |   402 [31m-[m
+ Notas/Notas_AdminActiva/iShares-US-Insurance-ETF_fund.xls                      | 57578 [31m------------------------------------------------------------[m
+ Notas/Notas_AdminPasiva/Notas_AdminPasiva.R                                    |   181 [31m-[m
+ Notas/Notas_AdminPasiva/Notas_AdminPasiva.Rmd                                  |   312 [31m-[m
+ Notas/Notas_AdminPasiva/Notas_AdminPasiva.nb.html                              |   551 [31m-[m
+ Notas/Notas_AnalisisTecnico/.Rhistory                                          |     0
+ Notas/Notas_AnalisisTecnico/Notas_AnalisisTecnico.r                            |   204 [31m-[m
+ Notas/Notas_Forex/.RData                                                       |   Bin [31m150480[m -> [32m0[m bytes
+ Notas/Notas_Forex/.Rhistory                                                    |   512 [31m-[m
+ Notas/Notas_Forex/Calendario_FX.csv                                            |  1997 [31m---[m
+ Notas/Notas_Forex/Ejemplo_Oanda_Precios.R                                      |   106 [31m-[m
+ Notas/Notas_MarkDown/Notas_MarkDown.Rmd                                        |    66 [31m-[m
+ Notas/Notas_MarkDown/Notas_MarkDown.html                                       |   218 [31m-[m
+ Notas/Notas_R/Notas_R_varios.Rmd                                               |    69 [31m-[m
+ Notas/Notas_R/Notas_R_varios.html                                              |   215 [31m-[m
+ Notas/Notas_R/varios/Notas_R.ipynb                                             |   264 [31m-[m
+ Notas_R/Ejemplos/Knitr_BackTest.pdf                                            |   Bin [31m0[m -> [32m363712[m bytes
+ Notas_R/FichaTecnica_Knitr/FichaTecnica-concordance.tex                        |     2 [32m+[m
+ Notas_R/FichaTecnica_Knitr/FichaTecnica.nav                                    |     7 [32m+[m
+ Notas_R/FichaTecnica_Knitr/FichaTecnica.pdf                                    |   Bin [31m0[m -> [32m57005[m bytes
+ Notas_R/FichaTecnica_Knitr/FichaTecnica.rnw                                    |   335 [32m+[m
+ Notas_R/FichaTecnica_Knitr/FichaTecnica.snm                                    |     0
+ Notas_R/FichaTecnica_Knitr/FichaTecnica.synctex.gz                             |   Bin [31m0[m -> [32m13273[m bytes
+ Notas_R/FichaTecnica_Knitr/FichaTecnica.tex                                    |   349 [32m+[m
+ Notas_R/FichaTecnica_Knitr/FichaTecnica.toc                                    |     1 [32m+[m
+ Notas_R/FichaTecnica_Knitr/beamerthememyst.sty                                 |   172 [32m+[m
+ Notas_R/FichaTecnica_Knitr/framed.sty                                          |   548 [32m+[m
+ Notas_R/FichaTecnica_Knitr/tangocolors.sty                                     |    51 [32m+[m
+ Notas_R/Notas_AdminActiva/.RData                                               |   Bin [31m0[m -> [32m409194[m bytes
+ Notas_R/Notas_AdminActiva/.Rhistory                                            |   512 [32m+[m
+ Notas_R/Notas_AdminActiva/IAK_holdings.csv                                     |    77 [32m+[m
+ Notas_R/Notas_AdminActiva/IAK_holdings.xlsx                                    |   Bin [31m0[m -> [32m11489[m bytes
+ Notas_R/Notas_AdminActiva/Notas_AdminActiva.r                                  |   305 [32m+[m
+ Notas_R/Notas_AdminActiva/Notas_AdministracionActiva.ipynb                     |   402 [32m+[m
+ Notas_R/Notas_AdminActiva/iShares-US-Insurance-ETF_fund.xls                    | 57578 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ Notas_R/Notas_AdminPasiva/Notas_AdminPasiva.R                                  |   181 [32m+[m
+ Notas_R/Notas_AdminPasiva/Notas_AdminPasiva.Rmd                                |   312 [32m+[m
+ Notas_R/Notas_AdminPasiva/Notas_AdminPasiva.nb.html                            |   551 [32m+[m
+ Notas_R/Notas_AnalisisTecnico/.Rhistory                                        |     0
+ Notas_R/Notas_AnalisisTecnico/Notas_AnalisisTecnico.r                          |   204 [32m+[m
+ Notas_R/Notas_Forex/.RData                                                     |   Bin [31m0[m -> [32m150480[m bytes
+ Notas_R/Notas_Forex/.Rhistory                                                  |   512 [32m+[m
+ Notas_R/Notas_Forex/Calendario_FX.csv                                          |  1997 [32m+++[m
+ Notas_R/Notas_Forex/Ejemplo_Oanda_Precios.R                                    |   106 [32m+[m
+ Notas_R/Notas_MarkDown/Notas_MarkDown.Rmd                                      |    66 [32m+[m
+ Notas_R/Notas_MarkDown/Notas_MarkDown.html                                     |   218 [32m+[m
+ Notas_R/Notas_R/Notas_R_varios.Rmd                                             |    69 [32m+[m
+ Notas_R/Notas_R/Notas_R_varios.html                                            |   215 [32m+[m
+ Notas_R/Notas_R/varios/Notas_R.ipynb                                           |   264 [32m+[m
+ 75 files changed, 65034 insertions(+), 65330 deletions(-)
+
+[33mcommit 69878a313527e7dc0154b5cb4725eee5557b4fb9[m
+Author: IFFranciscoME <if.francisco.me@gmail.com>
+Date:   Mon Nov 5 08:16:25 2018 -0600
+
+    Agregado template para ficha tecnica con Knitr
+
+ Notas/Beamer poster - landscape orientation/beamerthemeI6dv.sty                |  161 [32m+++++[m
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.nav             |    7 [32m+[m
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.pdf             |  Bin [31m0[m -> [32m41585[m bytes
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.snm             |    0
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.synctex.gz      |  Bin [31m0[m -> [32m6911[m bytes
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.tex             |   76 [32m+++[m
+ Notas/Beamer poster - landscape orientation/example-style-I6dv.toc             |    1 [32m+[m
+ Notas/Beamer poster - landscape orientation/rwthaachenuniversity-whitegray.pdf |  Bin [31m0[m -> [32m3244[m bytes
+ Notas/Beamer poster - landscape orientation/tangocolors.sty                    |   51 [32m++[m
+ Notas/Ejemplos/Knitr_BackTest.pdf                                              |  Bin [31m0[m -> [32m363712[m bytes
+ Notas/FichaTecnica_Knitr/FichaTecnica-concordance.tex                          |    2 [32m+[m
+ Notas/FichaTecnica_Knitr/FichaTecnica.nav                                      |    7 [32m+[m
+ Notas/FichaTecnica_Knitr/FichaTecnica.pdf                                      |  Bin [31m0[m -> [32m57005[m bytes
+ Notas/FichaTecnica_Knitr/FichaTecnica.rnw                                      |  335 [32m+++++++++++[m
+ Notas/FichaTecnica_Knitr/FichaTecnica.snm                                      |    0
+ Notas/FichaTecnica_Knitr/FichaTecnica.synctex.gz                               |  Bin [31m0[m -> [32m13273[m bytes
+ Notas/FichaTecnica_Knitr/FichaTecnica.tex                                      |  349 [32m+++++++++++[m
+ Notas/FichaTecnica_Knitr/FichaTecnica.toc                                      |    1 [32m+[m
+ Notas/FichaTecnica_Knitr/beamerthememyst.sty                                   |  172 [32m++++++[m
+ Notas/FichaTecnica_Knitr/framed.sty                                            |  548 [32m+++++++++++++++++[m
+ Notas/FichaTecnica_Knitr/tangocolors.sty                                       |   51 [32m++[m
+ Notas/Notas_Forex/.RData                                                       |  Bin [31m0[m -> [32m150480[m bytes
+ Notas/Notas_Forex/.Rhistory                                                    |  512 [32m++++++++++++++++[m
+ Notas/Notas_Forex/Calendario_FX.csv                                            | 1997 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+ Notas/Notas_Forex/Ejemplo_Oanda_Precios.R                                      |   29 [32m+[m[31m-[m
+ 25 files changed, 4293 insertions(+), 6 deletions(-)
+
+[33mcommit 67e9fb665a8de422a975faddc06fa8bd2cd41c59[m
+Author: IFFranciscoME <if.francisco.me@gmail.com>
+Date:   Wed Oct 24 19:03:49 2018 -0500
+
+    Cambios en Notas Forex
+
+ Notas/Notas_AdminActiva/.Rhistory         | 188 [32m+++++++++++++++++++++++++++++++++++++++++++++++++[m[31m--------------------------------------------------[m
+ Notas/Notas_Forex/Ejemplo_Oanda_Precios.R |  48 [32m++++++++++++++++++++++[m[31m----[m
+ 2 files changed, 136 insertions(+), 100 deletions(-)
+
+[33mcommit f4d54ba4657dcf1f4acf3266c6295e6fbf8f6018[m
+Merge: ed88d6f 2ea38d4
+Author: IFFranciscoME <if.francisco.me@gmail.com>
+Date:   Thu Oct 18 07:29:42 2018 -0500
+
+    Merge branch 'master' of https://github.com/ITESOIF/MyST
