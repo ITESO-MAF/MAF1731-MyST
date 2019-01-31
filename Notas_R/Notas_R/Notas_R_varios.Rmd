@@ -6,7 +6,7 @@ date: "Enero, 2019"
 output: html_document
 ---
 
-### Instalar/Cargar paquetes
+  ### Instalar/Cargar paquetes
 
 ```{r Instalar, message=FALSE, warning=FALSE}
 
@@ -50,7 +50,6 @@ Lista$Numeros[1]
 str(Lista)
 
 # En R y en muchos otros lenguajes, Un FOR o IF de una sola instrucción no necesita paréntesis
-
 for(i in 1:5)
   print(i)
   

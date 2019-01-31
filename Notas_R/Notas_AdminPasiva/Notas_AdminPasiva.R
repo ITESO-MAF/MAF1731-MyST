@@ -30,7 +30,7 @@ Bajar_Precios <- function(Columns, Tickers, Fecha_In, Fecha_Fn) {
   # -- Fecha_Fn : Fecha Final : character : "2017-08-02"
   
   # Peticion para descargar precios
-  Datos <- Quandl.datatable(code = "WIKI/PRICES", qopts.columns=Columns, ticker=Tickers,
+  Datos <- Quandl.datatable("WIKI/PRICES", qopts.columns=Columns, ticker=Tickers,
                             date.gte=Fecha_In, date.lte=Fecha_Fn)
   return(Datos)
 }
