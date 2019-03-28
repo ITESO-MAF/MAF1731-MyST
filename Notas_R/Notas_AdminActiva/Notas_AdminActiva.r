@@ -1,24 +1,38 @@
 
 # -- ----------------------------------------------------------------------------------------- -- #
 # -- ----------------------------------------------------------------------------------------- -- #
-# -- ----------------------------------------------------------------------------------------- -- #
 
 # Remover todos los objetos del "Environment"
 rm(list = ls())
 
-# los 0s aceptados antes de expresas una cifra en notaci?n cient?fica
-#options("scipen"=100, "digits"=4)
+# los 0s aceptados antes de expresas una cifra en notacion cientifica
+# options("scipen"=100, "digits"=4)
 
 # Cargas librerias a utilizar
 suppressMessages(library(plotly)) # Graficas interactivas
 suppressMessages(library(Quandl)) # Descargar Precios
 suppressMessages(library(ROI))    # Optimizacion para portafolio
-suppressMessages(library(knitr))  # Opciones de documentaci?n + c?digo
-suppressMessages(library(openxlsx))   # Leer archivos XLSx
-suppressMessages(library(kableExtra)) # Tablas en HTML
+suppressMessages(library(knitr))  # Opciones de documentacion + codigo
+suppressMessages(library(openxlsx))           # Leer archivos XLSx
+suppressMessages(library(kableExtra))         # Tablas en HTML
 suppressMessages(library(PortfolioAnalytics)) # Teoria Moderna de Portafolios
 
-options(knitr.table.format = "html") 
+options(knitr.table.format = "html")
+
+# -- ---------------------------------------------------------------- DataFrame de Operaciones -- #
+# -- ---------------------------------------------------------------- ------------------------ -- #
+# -- DataFrame para actualizar informacion de operaciones ejecutadas
+
+df_operaciones <- data.frame("Fecha" = 0, "Operacion" = 0, "Titulos" = 0, 
+                             "Ticker" = 0, "Precio_ejecucion" = 0, "Comisiones" = 0)
+
+# -- --------------------------------------------------------------------- DataFrame de Cuenta -- #
+# -- --------------------------------------------------------------------- ------------------- -- #
+# -- DataFrame para actualizar informacion de cuenta
+
+df_cuenta <- data.frame("Fecha" = 0,
+                        "Efectivo" = 0, "Flotante" = 0, "Balance" = 0,
+                        "Comisiones_d" = 0, "Comisiones_a" = 0, "Mensaje" = "")
 
 # Cargar el token de QUANDL
 Quandl.api_key("dN9QssXxzTxndaqKUQ_i")
@@ -40,14 +54,22 @@ Bajar_Precios <- function(Columns, Tickers, Fecha_In, Fecha_Fn) {
   return(Datos)
 }
 
-# Tickers de acciones contenidas en ETF-IAK
+# -- Suponiendo que los archivos estan guardados asi
+# -  "IAK_Holdings_01.csv", "IAK_Holdings_02.csv"
 
-Datos_ETF <- read.xlsx("IAK_holdings.xlsx", sheet = 1)
-tk <- as.character(na.omit(Datos_ETF[which(Datos_ETF[,1] == "Ticker")+1:length(Datos_ETF[,1]),1]))
-cs <- c("date", "adj_close")
+archivos <- c()
+for(i in 1:4){
+  archivos[i] <- paste0("IVV_holding_", i, ".csv")
+}
+archivos
+
+# Tickers de acciones contenidas en ETF-IAK
+Datos_ETF <- read.csv("Datos/IAK_holdings.csv", row.names=NULL, skip=10, stringsAsFactors=FALSE)
+tk <- Datos_ETF$Ticker
+cs <- c("date", "open","high","low","close")
 
 # Fecha inicial y fecha final
-fs <- c("2016-09-01", "2018-09-01")
+fs <- c("2017-01-01", "2018-01-01")
 
 # Descargar Precios
 Datos <- list()
