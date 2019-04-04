@@ -28,7 +28,7 @@ A1_OA_At = "practice"             # Tipo de cuenta
 A1_OA_In = "USD_MXN"              # Instrumento
 A1_OA_Gn = "H1"                   # Granularidad de velas
 
-A1_OA_Ak = "a"+ "da4a61b0d5bc0e5939365e01450b614" + "-4121f84f01ad78942c46fc3ac777baa" + "6"
+A1_OA_Ak = "a" + "da4a61b0d5bc0e5939365e01450b614" + "-4121f84f01ad78942c46fc3ac777baa" + "6"
 
 F1 = "2017-01-01T00:00:00Z"
 F2 = "2017-02-01T00:00:00Z"
@@ -76,4 +76,4 @@ trace1 = go.Scatter(x=pd_hist['TimeStamp'], y=pd_hist['Close'],
 
 data = [trace0, trace1]
 
-py.offline.plot(data, filename='file.html')
+py.offline.plot(data, filename='Grafica_1.html')

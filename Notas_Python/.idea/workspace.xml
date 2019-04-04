@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f0d3b51c-86df-4915-88fc-31f45485ddec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Notas_R/Notas_R/Notas_R_varios.Rmd" beforeDir="false" afterPath="$PROJECT_DIR$/../Notas_R/Notas_R/Notas_R_varios.Rmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notas_AnalisisTecnico/file.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,10 +27,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Notas_Herramientas/Precios_Oanda.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="528">
               <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
               <folding>
                 <element signature="e#202#221#0" expanded="true" />
@@ -37,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="1242">
+              <caret line="74" column="48" selection-start-line="73" selection-start-column="63" selection-end-line="74" selection-end-column="48" />
               <folding>
                 <element signature="e#202#217#0" expanded="true" />
               </folding>
@@ -68,6 +70,7 @@
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/Notas_Herramientas/Plotly.py" />
         <option value="$PROJECT_DIR$/Notas_Herramientas/Precios_Oanda.py" />
+        <option value="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py" />
       </list>
     </option>
   </component>
@@ -83,6 +86,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,10 +98,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
@@ -133,7 +137,7 @@
   <component name="ToolWindowManager">
     <frame x="61" y="32" width="1859" height="1048" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959038" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24945533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -146,7 +150,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32925472" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32925472" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32925472" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.3297062" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -190,7 +194,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Notas_Herramientas/Precios_Oanda.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="528">
           <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
           <folding>
             <element signature="e#202#221#0" expanded="true" />
@@ -200,8 +204,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="1242">
+          <caret line="74" column="48" selection-start-line="73" selection-start-column="63" selection-end-line="74" selection-end-column="48" />
           <folding>
             <element signature="e#202#217#0" expanded="true" />
           </folding>
