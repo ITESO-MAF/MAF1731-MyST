@@ -2,13 +2,7 @@
 # -- ------------------------------------------------------------- Importar modulos a utilizar -- #
 # -- ------------------------------------------------------------- --------------------------- -- #
 
-import ta as ta
-import pandas as pd
-from oandapyV20 import API
-import oandapyV20.endpoints.instruments as instruments
-import plotly.graph_objs as go
-import plotly as py
-from Notas_AnalisisTecnico.AnalisisBase import *
+from AnalisisBase import *
 
 # -- ------------------------------------------------------------------- Parametros para OANDA -- #
 # -- ------------------------------------------------------------------- --------------------- -- #

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0d3b51c-86df-4915-88fc-31f45485ddec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Notas_AnalisisFundamental/AnalisisFundamental.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisBase.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +15,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="-133">
               <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#202#217#0" expanded="true" />
@@ -31,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisBase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="-509">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="e#202#217#0" expanded="true" />
               </folding>
@@ -222,7 +218,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisTecnico.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="-133">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#202#217#0" expanded="true" />
@@ -232,8 +228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Notas_AnalisisTecnico/AnalisisBase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="-509">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="e#202#217#0" expanded="true" />
           </folding>

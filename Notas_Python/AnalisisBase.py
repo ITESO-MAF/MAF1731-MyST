@@ -37,19 +37,6 @@ FechaFin = "2017-03-10T00:00:00Z"
 
 # -- Vector de fechas
 
-def perdelta(start, end, delta):
-    curr = start
-    while curr < end:
-        yield curr
-        curr += delta
-
-fechas = []
-
-for i in perdelta(date(2017, 3, 1), date(2019, 3, 1), timedelta(days=15)):
-    print(type(result))
-
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
 
 def date_range(start_date, end_date, increment, period):
     result = []
@@ -59,6 +46,14 @@ def date_range(start_date, end_date, increment, period):
         result.append(nxt)
         nxt += delta
     return result
+
+start_date = date(2017, 3, 1)
+end_date = date(2019, 3, 1)
+fechas = date_range(start_date, end_date, 15, 'days')
+
+F1 = fechas[0].strftime('%Y-%m-%dT%H:%M:%S')
+F2 = fechas[1].strftime('%Y-%m-%dT%H:%M:%S')
+
 
 # -- ---------------------------------------------------------------- Inicializar API de OANDA -- #
 # -- ---------------------------------------------------------------- ------------------------ -- #
@@ -70,7 +65,7 @@ api = API(access_token=A1_OA_Ak)
 
 
 params = {"granularity": A1_OA_Gn, "price": "M", "dailyAlignment": A1_OA_Da,
-          "alignmentTimezone": A1_OA_Ta, "from": FechaIni  , "to": FechaFin}
+          "alignmentTimezone": A1_OA_Ta, "from": F1  , "to": F2}
 
 A1_Req1 = instruments.InstrumentsCandles(instrument=A1_OA_In, params=params)
 A1_Hist = api.request(A1_Req1)
