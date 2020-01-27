@@ -7,12 +7,13 @@
 # -- ------------------------------------------------------------------------------------ -- #
 
 import plotly.graph_objects as go
-import plotly.io as pio                             # renderizador para visualizar imagenes
-pio.renderers.default = "browser"                   # render de imagenes para correr en script
+import plotly.io as pio                           # renderizador para visualizar imagenes
+pio.renderers.default = "browser"                 # render de imagenes para correr en script
 
 
 # -- --------------------------------------------------------- GRÁFICA: velas OHLC Simple -- #
 # -- ------------------------------------------------------------------------------------ -- #
+# -- --- Velas tipo candlestick utilizando precios tipo OHLC
 
 def g_velas(p0_de):
     """
@@ -45,5 +46,57 @@ def g_velas(p0_de):
     fig.layout.autosize = False
     fig.layout.width = 840
     fig.layout.height = 520
+
+    return fig
+
+
+# -- ----------------------------------------------------------- GRÁFICA: Boxplot de PIPS -- #
+# -- ------------------------------------------------------------------------------------ -- #
+# -- --- Utilizando diferencias de precios expresadas en PIPS
+
+def g_boxplot_varios(p0_data, p1_norm):
+    """
+    Parameters
+    ----------
+    p0_data : pd.DataFrame : Datos de entrada en formato OHLC
+    p1_norm : bool : Para normalizar o no los datos de entrada
+
+    Returns
+    -------
+
+    Debugging
+    ---------
+
+    """
+    x_data = list(p0_data.columns)
+
+    if p1_norm:
+        y_data = [p0_data.iloc[:, i]/max(p0_data.iloc[:, i])
+                  for i in range(0, len(list(p0_data.columns)))]
+    else:
+        y_data = [p0_data.iloc[:, i] for i in range(0, len(list(p0_data.columns)))]
+
+    fig = go.Figure()
+
+    for xd, yd in zip(x_data, y_data):
+        q1 = yd.quantile(0.25)
+        q3 = yd.quantile(0.75)
+        iqr = q3 - q1
+        out_yd = list(yd[(yd < (q1 - 1.5 * iqr)) | (yd > (q3 + 1.5 * iqr))].index)
+
+        fig.add_trace(go.Box(y=yd, name=xd, boxpoints='all', jitter=0.5, whiskerwidth=0.5,
+                             marker_size=7, line_width=1, boxmean=True,
+                             selectedpoints=out_yd))
+
+    fig.update_layout(title='Visualizacion de todas las variables',
+                      yaxis=dict(autorange=True, showgrid=True, dtick=5,
+                                 gridcolor='rgb(255, 255, 255)', gridwidth=1),
+                      margin=dict(l=40, r=30, b=80, t=100),
+                      showlegend=False)
+
+    fig.update_yaxes(hoverformat='.2f')
+
+    # Mostrar figura
+    # fig.show()
 
     return fig

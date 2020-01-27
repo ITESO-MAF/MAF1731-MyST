@@ -22,6 +22,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -39,9 +40,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="470" y="191" key="SettingsEditor" timestamp="1579786449809">
+    <state x="470" y="191" key="SettingsEditor" timestamp="1579802162164">
       <screen x="57" y="34" width="1863" height="1046" />
     </state>
-    <state x="470" y="191" key="SettingsEditor/57.34.1863.1046@57.34.1863.1046" timestamp="1579786449809" />
+    <state x="470" y="191" key="SettingsEditor/57.34.1863.1046@57.34.1863.1046" timestamp="1579802162164" />
+    <state x="651" y="263" width="672" height="678" key="search.everywhere.popup" timestamp="1579819366125">
+      <screen x="57" y="34" width="1863" height="1046" />
+    </state>
+    <state x="651" y="263" width="672" height="678" key="search.everywhere.popup/57.34.1863.1046@57.34.1863.1046" timestamp="1579819366125" />
   </component>
 </project>

@@ -107,6 +107,10 @@ def f_precios_masivos(p0_fini, p1_ffin, p2_gran, p3_inst, p4_oatk, p5_ginc):
         r_df_final = pd.DataFrame(lista)
         r_df_final = r_df_final[['TimeStamp', 'Open', 'High', 'Low', 'Close']]
         r_df_final['TimeStamp'] = pd.to_datetime(r_df_final['TimeStamp'])
+        r_df_final['Open'] = pd.to_numeric(r_df_final['Open'], errors='coerce')
+        r_df_final['High'] = pd.to_numeric(r_df_final['High'], errors='coerce')
+        r_df_final['Low'] = pd.to_numeric(r_df_final['Low'], errors='coerce')
+        r_df_final['Close'] = pd.to_numeric(r_df_final['Close'], errors='coerce')
 
         return r_df_final
 
@@ -159,5 +163,9 @@ def f_precios_masivos(p0_fini, p1_ffin, p2_gran, p3_inst, p4_oatk, p5_ginc):
 
         # resetear index en dataframe resultante porque guarda los indices del dataframe pasado
         r_df_final = r_df_final.reset_index(drop=True)
+        r_df_final['Open'] = pd.to_numeric(r_df_final['Open'], errors='coerce')
+        r_df_final['High'] = pd.to_numeric(r_df_final['High'], errors='coerce')
+        r_df_final['Low'] = pd.to_numeric(r_df_final['Low'], errors='coerce')
+        r_df_final['Close'] = pd.to_numeric(r_df_final['Close'], errors='coerce')
 
         return r_df_final
