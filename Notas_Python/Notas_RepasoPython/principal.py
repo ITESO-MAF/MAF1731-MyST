@@ -47,11 +47,3 @@ df_pe['co'] = (df_pe['Close'] - df_pe['Open'])*pip_mult
 # -- ------------------------------------------------------------ Graficar Boxplot plotly -- #
 vs_grafica2 = vs.g_boxplot_varios(p0_data=df_pe[['co']], p1_norm=False)
 vs_grafica2.show()
-
-# -- 01: Mes de la vela.
-# -- 02: Sesion de la vela.
-# -- 03: Amplitud OC esperada de vela para cualquier dia de la semana (Dist de Freq).
-# -- 04: Amplitud HL esperada de vela para cualquier dia de la semana (Dist de Freq).
-# -- 05: Evolucion de velas consecutivas (1: Alcistas, 0: Bajistas).
-# -- 06: Maxima evolucion esperada de velas consecutivas (Dist Acum de Freq).
-# -- 07: Calculo + Grafica autopropuesta.
