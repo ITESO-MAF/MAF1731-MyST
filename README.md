@@ -1,5 +1,6 @@
 ## Bienvenido a la Página / Repositorio de la clase de Microestructura y Sistemas de Trading
 
+# BAJO CONSTRUCCION
 
 
 ### Support or Contact
