@@ -31,10 +31,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.todo',
               'sphinx.ext.doctest',
               'sphinx.ext.napoleon',
-              'sphinx.ext.linkcode',
-              'sphinx.ext.intersphinx',
-              'hidden_code_block',
-              'sphinxcontrib.contentui']
+              'sphinx.ext.intersphinx']
 
 todo_include_todos = True
 napoleon_google_docstring = False
@@ -75,7 +72,7 @@ pygments_style = 'sphinx'
 # html_theme = 'alabaster'
 
 # Add any paths that contain custom static files (such as style sheets)
-html_static_path = ['_static']
+# html_static_path = ['_static']
 
 # ----------------------------------------------------------------------------- Options for LaTeX output -- #
 # --------------------------------------------------------------------------------------------------------- #

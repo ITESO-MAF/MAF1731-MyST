@@ -1,9 +1,13 @@
-.. _index:
+.. maf1731-myst documentation master file, created by
+   sphinx-quickstart on Sun May 23 00:38:33 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-Welcome to the course documentation.
+Welcome to maf1731-myst's documentation!
+========================================
 
 .. toctree::
-    :maxdepth: 1
-    
-    home
-    intro
+   :maxdepth: 2
+   :caption: Contents:
+
+   intro
