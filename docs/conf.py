@@ -9,7 +9,9 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../../'))
+package_path = os.path.abspath('../..')
+os.environ['PYTHONPATH'] = ':'.join((package_path, os.environ.get('PYTHONPATH', '')))
 
 # ---------------------------------------------------------------------------------- Project information -- #
 # --------------------------------------------------------------------------------------------------------- #
@@ -25,10 +27,12 @@ version = '0.0.1'
 
 # Add any Sphinx extension module names here
 extensions = ['sphinx.ext.autodoc',
+              'spinx_autodoc_typehints',
               'sphinx.ext.todo',
               'sphinx.ext.doctest',
               'sphinx.ext.napoleon',
-              'sphinx.ext.intersphinx']
+              'sphinx.ext.intersphinx',
+              'jupyter_sphinx.execute']
 
 todo_include_todos = True
 napoleon_google_docstring = False
@@ -73,12 +77,13 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-# html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['../_static/']
+
 
 # ----------------------------------------------------------------------------- Options for LaTeX output -- #
 # --------------------------------------------------------------------------------------------------------- #
