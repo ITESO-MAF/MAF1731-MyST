@@ -3,13 +3,13 @@
 MAF1731 - Market Microstructure and Trading Systems
 ---------------------------------------------------
 
-This is the official repository of the class, the content is provided with **MIT License**.
+Official repository of the class MAF1731 - Market Microstructure and Trading Systems, the content is provided under an MIT License. 
 
 ---------------
 Important Links
 ---------------
 
-- ITESO university: https://iteso.mx
+- `ITESO University <https://iteso.mx>`_
 
 ---------------------------
 Author/Principal Maintainer
