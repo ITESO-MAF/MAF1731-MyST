@@ -20,7 +20,7 @@ rundir = os.path.dirname(__file__)
 sys.path.insert(0, rundir[:-4]) # remove '/doc' from end of path
 
 # The master toctree document..
-master_doc = 'Index'
+master_doc = 'index'
 source_suffix = '.rst'
 
 # ----------------------------------------------------------------- Local Debug or readthedocs.io deploy -- #

@@ -12,7 +12,7 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    Course_Introduction
    Capital_Investment
