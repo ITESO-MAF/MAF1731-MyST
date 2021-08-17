@@ -10,7 +10,10 @@ Welcome to MyST Documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
-   intro
-   jupyter-tests
+   Course_Introduction
+   Capital_Investment
+   Discretionary_Trading
+   Behavioral_Finance
+   Market_Microstructure
+   Trading_Systems
