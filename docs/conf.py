@@ -57,8 +57,7 @@ extensions = ['sphinx.ext.autosummary',
               'sphinx.ext.intersphinx',
               'sphinx.ext.coverage',
               'sphinx.ext.mathjax',
-              'sphinx.ext.viewcode',
-              'numpydoc']
+              'sphinx.ext.viewcode']
 
 # To support multiple sphinx version without having warning.
 try:
