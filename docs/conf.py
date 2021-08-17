@@ -20,7 +20,7 @@ rundir = os.path.dirname(__file__)
 sys.path.insert(0, rundir[:-4]) # remove '/doc' from end of path
 
 # The master toctree document..
-master_doc = 'index'
+master_doc = 'Index'
 source_suffix = '.rst'
 
 # ----------------------------------------------------------------- Local Debug or readthedocs.io deploy -- #
@@ -51,24 +51,12 @@ version = 'v0.1'
 # --------------------------------------------------------------------------------------------------------- #
 
 # Add any Sphinx extension module names here
-extensions = ['sphinx.ext.autosummary',
-              'sphinx.ext.autodoc',
+extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.doctest',
-              'sphinx.ext.intersphinx',
               'sphinx.ext.coverage',
               'sphinx.ext.mathjax',
-              'sphinx.ext.viewcode']
-
-# To support multiple sphinx version without having warning.
-try:
-    from sphinx.ext import imgmath
-    extensions.append('sphinx.ext.imgmath')
-except ImportError:
-    try:
-        from sphinx.ext import pngmath
-        extensions.append('sphinx.ext.pngmath')
-    except ImportError:
-        pass
+              'sphinx.ext.viewcode',
+              'jupyter_sphinx']
 
 # Hide the "Edit on GitHub" or "View page source" links
 html_context = {'display_github': False, 'show_source': False, 'html_show_sourcelink': False}
@@ -116,7 +104,7 @@ html_theme_options = {'logo_only': True, 'display_version': False, 'style_nav_he
 # --------------------------------------------------------------------------------------------------------- #
 
 # The font size ('10pt', '11pt' or '12pt')
-latex_elements = {'pointsize': '12pt'}
+latex_elements = {'pointsize': '12pt',}
 
 # Important stuff for the LaTeX preamble.
 latex_elements['preamble'] =  '\\usepackage{xcolor}\n'+\

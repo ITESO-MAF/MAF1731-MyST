@@ -4,9 +4,7 @@
 Course Introduction
 ===================
 
-Content pending for migration ... 
-
-$\sim \sum_{k=0}^{11}$
+This is an inline equation : $\sim \sum_{k=0}^{11}$
 
 .. jupyter-execute::
 
