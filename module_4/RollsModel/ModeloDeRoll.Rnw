@@ -1,0 +1,281 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath,mathtools}
+\usepackage{graphicx}
+
+\setlength\parindent{0pt}
+
+\title{El modelo de Roll}
+
+\author{Juan Francisco Mu\~noz-Elguezabal}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\maketitle
+
+\begin{abstract}
+
+Al tomar la perspectiva de la microestructura de la din\'amica del precio de un activo financiero, cambiaremos el enf\'oque de las caracter\'isticas de los precios mensuales y diarios hacia las caracter\'isticas de la din\'amica de los precios en horizontes de tiempo en minutos o segundos. Lo anterior hace que se muestre la dicotom\'ia fundamental que est\'a presente en muchos de los modelos de microestructura, la distinci\'on entre las componentes del precio debido al valor fundamental del activo financiero y a aquellas atribuibles a la organizaci\'on del mercado y procesos de trading. Se presentar\'a el modelo de Roll, su planteamiento y derivaci?n te\'orica formal. 
+\end{abstract}
+
+\newpage
+
+
+\section{Modelo}
+
+En t\'erminos b\'asicos y para el caso que analizaremos que es el precio de acciones, el valor fundamental de la acci\'on representa el valor presente de los flujos de efectivo futuros que se esperan y que ser?n duraderos, en cambio, el precio de transacci\'on. \\\\
+Como se probar\'a en el curso del documento, el modelo de Roll tiene dos par\'ametros, $C$ y ${{\sigma}^{2}}_{u}$. Estos par\'ametros pueden ser convenientemente estimados con la informaci\'on de la varianza y autocovarianza de primer orden del cambio de los precios $\triangle{P}_{t}$. Pero antes, se plantean las dos equaciones iniciales que componen el modelo, una para modelar el valor fundamental del activo financiero y otra para modelar el precio de transacci\'on del mismo activo. Veamos:
+
+\begin{equation}
+\begin{aligned}
+	{m}_{t} &= {m}_{t-1} + {u}_{t} \\
+	{p}_{t} &= {m}_{t} + C{q}_{t} \\
+\end{aligned}
+\end{equation}
+
+donde: \\
+${m}_{t}$ : Precio \textit{eficiente} en el tiempo $t$, (No es observado). \\
+${m}_{t-1}$ : Precio \textit{eficiente} en el tiempo $t-1$, (ya observado). \\
+${p}_{t}$ : Precio de \textit{transacci\'on} en el tiempo $t$, (Observado). \\
+$C$ : Costo de transacci\'on impuesto por los \textit{dealers}. \\
+${u}_{t}$ : Componente aleatoria $iid \sim N(0,{\sigma}^{2})$ \\
+${q}_{t}$ : Variable binaria de direcci\'on de transacci\'on, distribuida $iid \sim U(-1, 1)$ \\
+
+\begin{equation}\label{Condicion}
+{ q }_{ t }\begin{cases} Buy\quad =\quad +1\quad ;\quad P({ q }_{ t }|{ q }_{ t }=+1)\quad =\quad \frac { 1 }{ 2 }  \\ Sell\quad =\quad -1\quad ;\quad P({ q }_{ t }|{ q }_{ t }=-1)\quad =\quad \frac { 1 }{ 2 }  \\ Buy/Sell\quad ;\quad P({ q }_{ t }|{ (q }_{ t }=+1\quad \vee \quad { q }_{ t }=-1))\quad =\quad 1 \end{cases}
+\end{equation}
+\\
+
+${q}_{t}$ es un proceso binario, si ${q}_{t} = Sell \rightarrow P({q}_{t}) = \frac{1}{2}$ de igual manera, si ${q}_{t} = Buy \rightarrow P({q}_{t}) = \frac{1}{2}$, por lo tanto, la probabilidad de que ocurra el evento $Sell$ o $Buy$ es la suma de las probabilidades para ambos casos, entonces $P({ q }_{ t }|{ (q }_{ t }=+1 \vee  { q }_{ t }=-1)) = 1$. Lo que es equivalente a expresarlo como una variable aleatoria distribuida $iid \sim U(-1, 1)$.
+
+\subsection*{C\'alculo de la diferencia de precios $\triangle{P}_{t}$ }
+
+Con base a las dos ecuaciones propuestas como el modelo de roll, se puede calcular lo siguiente.\\
+
+\begin{equation*}
+\begin{aligned}
+	\triangle{P}_{t} = {P}_{t} - {P}_{t-1} &= ({m}_{t} + C {q}_{t}) - ({m}_{t-1} + C {q}_{t-1}) \\
+	 \triangle{P}_{t} &= {m}_{t} + C{q}_{t} - {m}_{t-1} - C {q}_{t-1} \\
+     \triangle{P}_{t} &= {m}_{t} - {m}_{t-1} + C{q}_{t} - C{q}_{t-1} \\
+     \triangle{P}_{t} &= ({m}_{t-1} + {u}_{t}) - {m}_{t-1} + C{q}_{t} - C{q}_{t-1} \\
+     \triangle{P}_{t} &= {m}_{t-1} - {m}_{t-1} + C{q}_{t} - C{q}_{t-1} + {u}_{t} \\ \\
+\end{aligned}
+\end{equation*}
+
+De manera que tendremos a la diferencia del precio eficiente en el tiempo $t-1$ respecto al precio eficiente en el tiempo $t$ como la suma algebraica del costo de transacci\'on $C$ multiplicados por la probabilidad del sentido de la transacci\'on en tiempo $t$ y $t-1$, m\'as, una componente de ruido o aleatoriedad.
+
+\begin{equation}
+\triangle{P}_{t} = C{q}_{t} - C{q}_{t-1} + {u}_{t}
+\end{equation}
+
+\newpage
+
+\subsection*{C\'alculo de la diferencia de precios $\triangle{P}_{t-1}$ }
+
+De manera similar se calcula el siguiente valor. \\ 
+
+\begin{equation*}
+\begin{aligned}
+	\triangle{P}_{t-1} = {P}_{t-2} - {P}_{t-1} &= ({m}_{t-2} - C {q}_{t-2}) - ({m}_{t-1} - C {q}_{t-1}) \\
+	 \triangle{P}_{t-1} &= ({m}_{t-2} - C{q}_{t-2}) - \left[ ({m}_{t-2} + {u}_{t-1}) - C{q}_{t-1}\right] \\
+     \triangle{P}_{t-1} &= {m}_{t-2} - C{q}_{t-2} - {m}_{t-2} - {u}_{t-1} - C{q}_{t-1} \\
+     \triangle{P}_{t-1} &= - C{q}_{t-2} + C{q}_{t-1} - {u}_{t-1} \\ \\     
+\end{aligned}
+\end{equation*}
+
+Para encontrar finalmente que $\triangle{P}_{t-1}$ es igual a:
+
+\begin{equation}
+\triangle{P}_{t-1} =  - C{q}_{t-2} + C{q}_{t-1} - {u}_{t-1}
+\end{equation}
+\\
+
+\subsection*{C\'alculo de la multiplicaci\'on de las diferencias de precios $(\triangle{P}_{t}\triangle{P}_{t-1})$}
+
+Ahora calcularemos otra expresi\'on que nos ser\'a \'util en los siguientes pasos. \\
+
+\begin{equation*}
+\begin{aligned}
+	(\triangle{P}_{t}\triangle{P}_{t-1}) = & (C{q}_{t} - C{q}_{t-1} + {u}_{t}) - (- C{q}_{t-2} - C{q}_{t-1} - {u}_{t-1}) \\
+    (\triangle{P}_{t}\triangle{P}_{t-1}) = &-{C}^{2}{{q}_{t-1}}^{2} + {C}^{2}{q}_{t-1}{q}_{t-2} + 
+    C{q}_{t-1}{u}_{t-1} + {C}^{2}{q}_{t}{q}_{t-1} \\ 
+    & - {C}^{2}{q}_{t}{q}_{t-2}  - C{q}_{t}{u}_{t-1} + C{q}_{t-1}{u}_{t} - 
+    C{q}_{t-2}{u}_{t} - {u}_{t}{u}_{t-1}
+\end{aligned}
+\end{equation*}
+\\
+
+Tendremos entonces el valor de la expresi\'on $(\triangle{P}_{t}\triangle{P}_{t-1})$ como:
+
+\begin{equation}
+\begin{aligned}
+	(\triangle{P}_{t}\triangle{P}_{t-1}) = &-{C}^{2}{{q}_{t-1}}^{2} + {C}^{2}{q}_{t-1}{q}_{t-2} + 
+    C{q}_{t-1}{u}_{t-1} + {C}^{2}{q}_{t}{q}_{t-1} \\ 
+    & - {C}^{2}{q}_{t}{q}_{t-2}  - C{q}_{t}{u}_{t-1} + C{q}_{t-1}{u}_{t} - 
+    C{q}_{t-2}{u}_{t} - {u}_{t}{u}_{t-1}
+\end{aligned}
+\end{equation}
+\\
+
+\subsection*{C\'alculo de $Var(\triangle{P}_{t})$}
+
+Sabemos que lo siguiente se sostiene al utilizar la funci\'on generadora de momentos, para el caso de una V.A.
+
+\begin{equation}
+Var(X) =  E \left[ {X}^{2} \right]
+\end{equation}
+\\
+
+Entonces lo anterior lo podemos utilizar para calcular $Var(\triangle{P}_{t})$ de la siguiente manera: \\
+
+\begin{equation}
+\begin{aligned}
+	Var(X) &=  E \left[ {X}^{2} \right] \\
+    Var(\triangle{P}_{t}) &= E \left[ { (\triangle{P}_{t}) }^{2} \right] \\
+    Var(\triangle{P}_{t}) &= E \left[ { ( C{q}_{t} - C{q}_{t-1} + {u}_{t} ) }^{2} \right] \\
+    Var(\triangle{P}_{t}) &= E \left[ {C}^{2}{{q}^{2}}_{t-1} + {C}^{2}{{q}^{2}}_{t} -
+    2{C}^{2}{q}_{t-1}{q}_{t} - 2{C}{q}_{t-1}{u}_{t} + {C}{q}_{t}{u}_{t} + {{u}_{t}}^{2} \right]  \\
+    Var(\triangle{P}_{t}) &=  E \left[ {C}^{2}{{q}^{2}}_{t-1} \right] + 
+		E \left[ {C}^{2}{{q}^{2}}_{t} \right] - E \left[ 2{C}^{2}{q}_{t-1}{q}_{t} \right] - 
+        E \left[ 2{C}{q}_{t-1}{u}_{t} \right] + E \left[ {C}{q}_{t}{u}_{t}  \right] + 
+        E \left[ {{u}_{t}}^{2} \right]  \\
+\end{aligned}
+\end{equation}
+
+\newpage
+
+Lo siguiente ser\'a buscar reducir la expresi\'on anterior, para lo cual, tenemos algunas equivalencias y consideraciones de apoyo que son las siguientes: \\
+
+$E \left[ {q}_{t-1}{q}_{t} \right] = 0$ : No hay correlaci\'on serial \\\\
+$E \left[ {u}_{t} \right] = 0$ : Por definici\'on, $iid \sim N(0,{\sigma}^{2})$ \\\\
+$E \left[ {{u}_{t}}^{2} \right] = {{\sigma}_{u}}^{2}$ ya que $E \left[ {x}^{2} \right] = Var(x)$ y $x=\sigma \rightarrow {x}^{2} =  {{\sigma}_{u}}^{2}$ \\\\
+$C$ : La comisi\'on es desconocida pero se considera constante. \\
+
+Quedando entonces que:
+
+\begin{equation}
+\begin{aligned}
+	Var(\triangle{P}_{t}) &= E \left[ {C}^{2}{{q}^{2}}_{t-1} \right] + E \left[ {C}^{2}{{q}^{2}}_{t} \right] +
+    E \left[ {{u}_{t}}^{2} \right] \\
+    Var(\triangle{P}_{t}) &= {C}^{2} E \left[ {{q}^{2}}_{t-1} \right] + {C}^{2} E\left[ {{q}^{2}}_{t} \right] +
+    {{\sigma}_{u}}^{2}
+\end{aligned}
+\end{equation}
+\\
+
+Para el caso particular de $E\left[ {{ q }^{2}}_{ t-1 } \right]$ y $E\left[ {{ q }^{2}}_{ t } \right]$ utilizaremos la condici\'on marcada por la distribuci\'on de probabilidad de ${q}_{t}$ igual para ${q}_{t-1}$, tal y como se declar\'o en \eqref{Condicion}. Por lo que podemos reescribirlo de la siguiente manera. \\
+
+\begin{equation}
+\begin{aligned}
+    E\left[{q}_{t-1} \right] &= E\left[ P({ q }_{ t-1 }|{ q }_{ t-1 }=+1) \right] +                                   E\left[ P({ q }_{ t-1 }|{ q }_{ t-1 }=-1)  \right] = (0.5) + (0.5) = 1 \\
+     E\left[ {{q}}^{2}_{t-1} \right] &= E\left[{q}_{t-1}{q}_{t-1} \right] = E\left[{q}_{t-1} \right] E\left[{q}_{t-1} \right] = (1)(1) = 1 \\
+     E\left[ {{q}}^{2}_{t-1} \right] &= 1 \\\\
+      E\left[{q}_{t} \right] &= E\left[ P({ q }_{ t }|{ q }_{ t }=+1) \right] +                                   E\left[ P({ q }_{ t }|{ q }_{ t }=-1)  \right] = (0.5) + (0.5) = 1 \\
+     E\left[ {{q}}^{2}_{t} \right] &= E\left[{q}_{t}{q}_{t} \right] = E\left[{q}_{t} \right] E\left[{q}_{t} \right] = (1)(1) = 1 \\
+     E\left[ {{q}}^{2}_{t} \right] &= 1 \\
+\end{aligned}
+\end{equation}
+\\
+
+Finalmente se tiene que:
+
+\begin{equation}
+\begin{aligned}
+	Var(\triangle{P}_{t}) &= E \left[ {C}^{2}{{q}^{2}}_{t-1} \right] + E \left[ {C}^{2}{{q}^{2}}_{t} \right] + {{\sigma}_{u}}^{2} \\
+    &= {C}^{2} E \left[ {{q}^{2}}_{t-1} \right] + {C}^{2} E\left[ {{q}^{2}}_{t} \right] + {{\sigma}_{u}}^{2}
+    = {C}^{2}(1) + {C}^{2}(1) + {{\sigma}_{u}}^{2} \\
+    Var(\triangle{P}_{t}) &= {C}^{2}(1+1) + {{\sigma}_{u}}^{2} 
+\end{aligned}
+\end{equation}
+\\
+
+Finalmente se tiene que:
+
+\begin{equation}\label{Varianza}
+	\boxed{ Var(\triangle{P}_{t}) = 2{C}^{2} + {{\sigma}_{u}}^{2} }
+\end{equation}
+
+\newpage
+\subsection*{C\'alculo de $Cov(\triangle{P}_{t-1}\triangle{P}_{t})$} 
+
+Recordando la expresi\'on ya calculada de $(\triangle{P}_{t-1}\triangle{P}_{t})$
+
+\begin{equation}
+\begin{aligned}
+	(\triangle{P}_{t}\triangle{P}_{t-1}) = &-{C}^{2}{{q}_{t-1}}^{2} + {C}^{2}{q}_{t-1}{q}_{t-2} + 
+    C{q}_{t-1}{u}_{t-1} + {C}^{2}{q}_{t}{q}_{t-1} \\ 
+    & - {C}^{2}{q}_{t}{q}_{t-2}  - C{q}_{t}{u}_{t-1} + C{q}_{t-1}{u}_{t} - 
+    C{q}_{t-2}{u}_{t} - {u}_{t}{u}_{t-1}
+\end{aligned}
+\end{equation}
+\\
+
+Adem\'as recordemos que seg\'un la funci\'on generadora de momentos estad\'isticos, establece que $Cov(\triangle{P}_{t-1}\triangle{P}_{t})$ se puede calcular de la siguiente manera:
+
+\begin{equation}
+\begin{aligned}
+	Cov(\triangle{P}_{t-1}\triangle{P}_{t}) &= E \left[ (\triangle{P}_{t}\triangle{P}_{t-1}) \right]
+\end{aligned}
+\end{equation}
+
+Por lo tanto: 
+
+\begin{equation}
+\begin{aligned}
+ E \left[ \triangle{P}_{t-1}\triangle{P}_{t} \right] &=  E\left[ -{C}^{2}{{q}}^{2}_{t-1} \right] + 
+    E\left[ {C}^{2}{q}_{t-1}{q}_{t-2} \right] + E\left[ C{q}_{t-1}{u}_{t-1} \right] + \\
+    E\left[ {C}^{2}{q}_{t}{q}_{t-1} \right] - E\left[ {C}^{2}{q}_{t}{q}_{t-2} \right]  
+    &- E\left[ C{q}_{t}{u}_{t-1} \right] + E\left[ C{q}_{t-1}{u}_{t} \right] - 
+    E\left[ C{q}_{t-2}{u}_{t} \right] - E\left[ {u}_{t}{u}_{t-1} \right]
+\end{aligned}
+\end{equation}
+\\
+
+La expresi\'on anterior la podemos reducir tomando en cuenta la misma informaci\'on con la que nos apoyamos para calcular $Var(\triangle{P}_{t})$. \\
+
+$E \left[ {q}_{t-1}{q}_{t} \right] = 0$ : No hay correlaci\'on serial \\\\
+$E \left[ {u}_{t} \right] = 0$ : Por definici\'on, $iid \sim N(0,{\sigma}^{2})$ \\\\
+$E \left[ {{u}_{t}}^{2} \right] = {{\sigma}_{u}}^{2}$ ya que $E \left[ {x}^{2} \right] = Var(x)$ y $x=\sigma \rightarrow {x}^{2} =  {{\sigma}_{u}}^{2}$ \\\\
+$C$ : La comisi\'on es desconocida pero se considera constante. \\\\
+$E\left[ {{q}}^{2}_{t-1} \right] = 1$ y $E\left[ {{q}}^{2}_{t} \right] = 1$ 
+\\
+
+Finalmente tenemos que:
+
+\begin{equation*}
+E \left[ \triangle{P}_{t-1}\triangle{P}_{t} \right] = E\left[ -{C}^{2}{{q}_{t-1}}^{2} \right] = 
+	-{C}^{2} E\left[ {{q}}^{2}_{t-1} \right] = -{C}^{2} (1)
+\end{equation*}
+
+\begin{equation}\label{Covarianza}
+ \boxed{ Cov(\triangle{P}_{t-1}\triangle{P}_{t}) = -{C}^{2} }
+\end{equation}
+
+\subsection*{Los par\'ametros finales del modelo de \textbf{Roll}} 
+
+Con los resultados de las ecuaciones \eqref{Varianza} y \eqref{Covarianza} : 
+
+\begin{equation}
+\begin{aligned}
+	Var(\triangle{P}_{t}) &= 2{C}^{2} + {{\sigma}_{u}}^{2} \\
+	Cov(\triangle{P}_{t-1}\triangle{P}_{t}) &= -{C}^{2}
+\end{aligned}
+\end{equation}
+\\
+
+Podremos despejar las ecuaciones anteriores, d\'ejandolas expresadas en t\'erminos de ${\gamma}_{0}$ y 
+${\gamma}_{1}$, quedando de la siguiente manera:
+
+\begin{equation}
+\begin{aligned}
+	{\gamma}_{0} &= 2{C}^{2} + {{\sigma}^{2}}_{u} \\
+    \Aboxed{ {{\sigma}^{2}}_{u} &= {\gamma}_{0} - 2{C}^{2} } \\\\
+    {\gamma}_{1} &= -{C}^{2} \\
+    \Aboxed{ C &= -\sqrt { { \gamma  }_{ 1 } } }
+\end{aligned}
+\end{equation}
+
+\end{document} 

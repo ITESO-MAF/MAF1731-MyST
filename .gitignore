@@ -8,10 +8,10 @@
 .vscode/
 
 # ignore virtual env for development
-myst_dev_venv/
+myst_venv/
 
 # ignore vscode workspace file
-myst_dev.code-workspace
+myst_workspace.code-workspace
 
 # ----------- -------------- ----------- #
 
