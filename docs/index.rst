@@ -1,15 +1,17 @@
-.. maf1731-myst documentation master file, created by
-   sphinx-quickstart on Sun May 23 00:38:33 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+
+=========
+Welcome ! 
+=========
+
+This is the official documentation for the course MAF1735: Market Microstructure and Trading Systems. Ofered
+as an undergraduate course at `ITESO`_
 
 
-Welcome to MyST Documentation
-=============================
-
+Contents
+--------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    Course_Introduction
    Capital_Investment
@@ -17,3 +19,6 @@ Welcome to MyST Documentation
    Behavioral_Finance
    Market_Microstructure
    Trading_Systems
+   jupyter-tests
+   
+.. _ITESO: https://iteso.mx

@@ -1,4 +1,3 @@
-. _Capital_Investment:
 
 ==================
 Capital Investment

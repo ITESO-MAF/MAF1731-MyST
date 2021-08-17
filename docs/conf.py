@@ -81,6 +81,13 @@ napoleon_include_special_with_doc = False
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+# Example configuration for intersphinx: refer to the Python standard library.
+intersphinx_mapping = {'http://docs.python.org/': None}
+
+
+# If true, links to the reST sources are added to the pages.
+html_show_sourcelink = False
+
 # ------------------------------------------------------------------------------ Options for HTML output -- #
 # --------------------------------------------------------------------------------------------------------- #
 
@@ -97,7 +104,7 @@ templates_path = ['_templates']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build']
 
 # List of directories, relative to source directories, that shouldn't be searched for source files.
 exclude_dirs = ['images', 'scripts']

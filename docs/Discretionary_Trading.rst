@@ -1,4 +1,3 @@
-. _Discretionary_Trading:
 
 =====================
 Discretionary Trading

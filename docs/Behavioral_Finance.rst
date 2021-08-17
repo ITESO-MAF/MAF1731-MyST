@@ -1,4 +1,3 @@
-. _Behavioral_Finance:
 
 ==================
 Behavioral Finance
