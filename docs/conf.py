@@ -98,7 +98,7 @@ exclude_patterns = ['_build']
 exclude_dirs = ['images', 'scripts']
 
 # Layout base options for theme
-html_theme_options = {'logo_only': True, 'display_version': False, 'style_nav_header_background': '#2bbcf3'}
+html_theme_options = {'logo_only': True, 'display_version': False, 'style_nav_header_background': '#2b91f2'}
 
 # ----------------------------------------------------------------------------- Options for LaTeX output -- #
 # --------------------------------------------------------------------------------------------------------- #
